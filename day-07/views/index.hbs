@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDEX</title>
+</head>
+
+<body>
+    <div id="screen"></div>
+    <script>
+        // 앞단에서 데이터 가공 후 랜더링
+        // 클라이언트에서 데이터를 가져와서 하는 방법
+        const renderHTML = (component) => {
+            document.querySelector("#screen").innerHTML = component
+        }
+
+        const UserListComponent = (arr) => {
+            const list = arr.map(({ name, age }) => {
+                return `<li>${name} : ${age}</li>`
+            }).join("")
+
+            return `<ul>${list}<ul>`
+        }
+
+        const toJson = (res) => {
+            return res.json()
+        }
+
+        fetch("/api/users") // promise형태로 리턴된다.
+            .then(toJson)
+            .then(UserListComponent)
+            .then(renderHTML)
+    </script>
+</body>
+
+</html>

@@ -1,16 +1,22 @@
 {
-    "name": "day-06",
+    "name": "day-07",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "nodemon": "nodemon src/server.js"
+        "ndm": "nodemon src/expressServer.js",
+        "jest": "jest"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "date-fns": "^2.16.1"
+        "express": "^4.17.1",
+        "hbs": "^4.1.1"
+    },
+    "devDependencies": {
+        "jest": "^26.4.2",
+        "prettier": "2.1.2"
     }
 }
